@@ -21,16 +21,16 @@ const postsSchema = mongoose.Schema({
 	user : {
 		type : mongoose.Schema.Types.ObjectId,
 		required : true,
-		ref : 'usersModel',
+		ref : 'User',
 	},
 
 	comment : {
 		type : mongoose.Schema.Types.ObjectId,
 		required : true,
-		ref : 'commentsModel',
+		ref : 'Comment',
 	}
 });
 
-const postsModel = mongoose.model('posts', postsSchema);
+const postsModel = mongoose.model('Post', postsSchema);
 
 module.exports = postsModel;

@@ -63,10 +63,50 @@ async function addNewPost(req, res){
 async function updatePostById(req, res){
 	try{
 		const id = req.params.id;
+		const dataToUpdate = req.body;
 		const _id = mongoose.Types.ObjectId(id);
 		const posts = await postsModel.findOne(_id);
 
+		if(!posts){
+			return res.json({message : "ivaild id / post not exist ", sucess : false});
+		}
+
+
+		//update the postmodel
+		const updateResult = await postsModel.findOneAndUpdate(
+			{_id : _id}, 
+			{ set : {title : dataToUpdate.title}},
+			{new : true} // return the updated document
+		);
 	}catch(err){
 		return res.json({message : err.message, error : err});
 	}
 };
+
+asunc function delPostById(req, res){
+	try{
+		const id = req.params.id;
+		const _id = mongoose.Types.ObjectId(id);
+		const postExist = await postsModel.findOne({_id , _id});
+		if(!postExist){
+			return res.status(404).json.({message: "Post not exist / invaild id "});
+		}
+
+		const deletePostResult = await postsModel.deleteOne({_id:_id});
+
+		return res.status(200).json({message: "Post is sucessfully deleted ", deleteInfo : deletePostResult});
+
+	}catch(err){
+		console.error("The error from the delPostBtId is this : ", err);
+		return res.json({message: "Some error while deleting Post by Id  ERROR is : ",err});
+	}
+}
+
+
+module.exports = {
+	getALLPosts,
+	getPostById,
+	addNewPost,
+	updatePostById,
+	delPostById,
+}

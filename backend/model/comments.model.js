@@ -3,13 +3,13 @@ const mongoose = require('mongoose');
 const commentsSchema = mongoose.Schema({
 	user :{
 		type : mongoose.Schema.Types.ObjectId,
-		ref : 'usersModel',
+		ref : 'User',
 		required : true,
 	},
 
 	post : {
 		type : mongoose.Schema.Types.ObjectId,
-		ref : 'postsModel',
+		ref : 'Post',
 		required : true,
 	},
 
@@ -25,6 +25,6 @@ const commentsSchema = mongoose.Schema({
 });
 
 
-const commentModel = mongoose.model('comments', commentsSchema);
+const commentModel = mongoose.model('Comment', commentsSchema);
 
 module.export = commentModel;

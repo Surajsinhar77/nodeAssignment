@@ -2,6 +2,10 @@ const express = require('express');
 const cors = require('cors');
 require('dotenv').config();
 const userAuthtication = require('./middleware/userAuthtication.js');
+const connectionToDB = require('./config/db_connection.js');
+
+
+connectionToDB();
 
 const app = express(express.json());
 app.use(cors());
