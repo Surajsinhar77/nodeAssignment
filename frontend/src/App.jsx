@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import './App.css';
 
-import {Button} from '@material-tailwind/react'
 import Test from './Test';
+import Postcard from './components/Postcard';
+import Navbar from './components/Navbar';
+
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <>
-
+      <Navbar/>
       <Test/>
+      {/* <Postcard/> */}
     </>
   )
 }

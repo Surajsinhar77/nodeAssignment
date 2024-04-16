@@ -3,7 +3,7 @@ const bcrypt = require('bcrypt');
 const serviceAuth = require('../service/serviceAuth.js');
 
 async function signUpUser(req, res){
-	tconst { name, email, password } = req.body;
+	const { name, email, password } = req.body;
 
     try {
         const isUserExist = await usersModel.findOne({ email: email });
