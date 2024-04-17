@@ -16,7 +16,7 @@ const postsRoutes = require('./routes/posts.routes.js');
 const commentsRoutes = require('./routes/comments.routes.js');
 
 // routes
-app.use('/auth' usersRoutes);
+app.use('/auth', usersRoutes)
 app.use('/posts', userAuthtication, postsRoutes);
 app.use('/comments', userAuthtication, commentsRoutes);
 
