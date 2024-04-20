@@ -17,7 +17,7 @@ const usersSchema = mongoose.Schema({
 		required : true,
 	},
 
-	token : {
+	accessToken : {
 		type : String,
 		required : true,
 		unique : true,
