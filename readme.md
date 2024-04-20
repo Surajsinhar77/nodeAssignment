@@ -9,3 +9,4 @@
 
     - to run fronend  'use npm run dev'
 
+    - to run backend  'use npm run server'
