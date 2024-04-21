@@ -1,18 +1,19 @@
 // import { useState } from 'react';
-import { Navbar } from '@material-tailwind/react';
 import './App.css';
 import LoginPage from './pages/LoginPage';
 
-// import {Button} from '@material-tailwind/react'
 import Test from './Test';
+// import Postcard from './components/Postcard';
+import Navbar from './components/Navbar';
+
 function App() {
   // const [count, setCount] = useState(0);
 
   return (
     <>
-    <LoginPage/>
-<Navbar/>
+      <Navbar/>
       <Test/>
+      {/* <Postcard/> */}
     </>
   )
 }

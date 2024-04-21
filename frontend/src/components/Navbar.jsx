@@ -10,7 +10,7 @@ export default function Navbar() {
                     <div className="navBarRigh  justify-between items-center">
                         <ul className="flex  mx-12  font-medium mb-4 gap-6 cursor-pointer">
                             <li className=" text-black rounded-lg p-2 hover:text-red-200 " to="/">Home</li>
-                            <li className="  text-black rounded-lg p-2" to="">About</li>
+                            <li className="  text-black rounded-lg p-2" to="/about">About</li>
                             <li className="  text-black rounded-lg p-2" >Services</li>
                             <li className="  text-black rounded-lg p-2">Contact</li>
                         </ul>

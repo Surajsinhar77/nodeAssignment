@@ -83,13 +83,13 @@ async function updatePostById(req, res){
 	}
 };
 
-asunc function delPostById(req, res){
+async function delPostById(req, res){
 	try{
 		const id = req.params.id;
 		const _id = mongoose.Types.ObjectId(id);
 		const postExist = await postsModel.findOne({_id , _id});
 		if(!postExist){
-			return res.status(404).json.({message: "Post not exist / invaild id "});
+			return res.status(404).json({message: "Post not exist / invaild id "});
 		}
 
 		const deletePostResult = await postsModel.deleteOne({_id:_id});
